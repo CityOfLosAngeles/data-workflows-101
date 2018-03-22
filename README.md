@@ -74,5 +74,3 @@ run into trouble or have suggestions. Pull Requests always welcome.
 [logo]: https://github.com/swanson/lagom/blob/master/logo.png
 [pages]: http://pages.github.com
 [twitter]: https://twitter.com/_swanson
-[pages]: https://github.com/github/pages-gem
->>>>>>> 6ffa0c03a14038490ad9b980072f32e15c3aec12
