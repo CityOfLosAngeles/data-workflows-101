@@ -1,44 +1,40 @@
 ---
 layout: post
-title: Another sample
+title: Basic ETL with Python
 categories:
 - blog
 ---
 
-Tattooed roof party *vinyl* freegan single-origin coffee wayfarers tousled, umami yr 
-meggings hella selvage. Butcher bespoke seitan, cornhole umami gentrify put a bird 
-on it occupy trust fund. Umami whatever kitsch, locavore fingerstache Tumblr pork belly
-[keffiyeh](#). Chia Echo Park Pitchfork, Blue Bottle [hashtag](#) stumptown skateboard selvage 
-mixtape. Echo Park retro butcher banjo cardigan, seitan flannel Brooklyn paleo fixie 
-Truffaut. Forage mustache Thundercats next level disrupt. Bicycle rights forage tattooed
-chia, **wayfarers** swag raw denim hashtag biodiesel occupy gastropub!
+ETL, or Extract-Transform-Load, is the workhorse procedure of Data Engineering. If you want to make [government systems better, you need to get good at ETL](http://daguar.github.io/2014/03/17/etl-for-america/).
 
----
-
-# It's all in the game.
-
-## You come at the king, you best not miss.
-
-### Be subtle with it, man. You know what subtle means?
-
-VHS post-ironic cred **bespoke** banjo. Yr wayfarers literally gentrify, flexitarian fap 
-dreamcatcher plaid cornhole Intelligentsia paleo. Beard try-hard direct trade, shabby chic 
-Helvetica `look ma, I can code`. Lo-fi American Apparel tattooed [Vice](#) tofu, yr vinyl. 
-Williamsburg butcher hella mumblecore fixie mlkshk, cliche wolf keytar mixtape kitsch banh mi 
-salvia. High Life Odd Future *chambray* kale chips hoodie, cray pop-up. Helvetica narwhal 
-iPhone try-hard jean shorts.
-
-> This is a quote from someone famous about productivity
+ETL is all about [building pipes](https://sunlightfoundation.com/2014/03/21/data-plumbers/). In this module, we'll go over how to built a simple pipeline using the Python programming langague.
 
 
-Syntax highlighting with Solarized theme.
+# Extract 
 
-{% highlight ruby %}
-class User < ActiveRecord::Base
-  attr_accessible :email, :name
+```
 
-  ... tons of other crap ...
+import requests
 
-end
+requests.get('URL')
 
-{% endhighlight %}
+data = r.json()
+
+```
+# Transform 
+
+```
+import pandas as pd 
+df = pd.from_dict(data)
+```
+
+# Load
+
+```
+import sqlite3
+
+conn = sqlite3.conn("./database.db")
+df.to_sql(df, conn)
+```
+
+
